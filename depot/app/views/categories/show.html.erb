@@ -1,0 +1,18 @@
+<p>
+  <b>Catname:</b>
+  <%=h @category.catname %>
+</p>
+
+<p>
+  <b>Catid:</b>
+  <%=h @category.catid %>
+</p>
+
+<p>
+  <b>Catimage:</b>
+  <%=h @category.catimage %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

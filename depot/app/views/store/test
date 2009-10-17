@@ -1,0 +1,58 @@
+body id="store">
+<div id="banner">
+
+<%= image_tag("logo.png" ) %>
+<%= @page_title || "Pragmatic Bookshelf" %>
+</div>
+<div id="columns">
+<div id="side">
+<a href="http://www....">Home</a><br />
+<a href="http://www..../faq">Questions</a><br />
+<a href="http://www..../news">News</a><br />
+<a href="http://www..../contact">Contact</a><br />
+</div>
+<div id="main">
+<% if flash[:notice] -%>
+<div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+<%= yield :layout %>
+</div>
+</div>
+</body>
+</html>
+
+
+	<!-- content [Start]-->
+        <!-- content [Start]-->
+        <!-- content [Start]-->
+
+<div id="content">
+		  <%= yield %>
+		</div>
+		<div id="clearfooter"></div>
+    </div>
+	<div id="footer"></div>
+	
+        <!-- content [end]-->
+        <!-- content [end]-->
+        <!-- content [end]-->
+        
+        File from product
+        
+        <!DOCTYPE html PUBLIC "//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1transitional.dtd" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <meta httpequiv="contenttype" content="text/html;charset=UTF8" />
+ <title>Products: <%= controller.action_name %></title>
+ <%= stylesheet_link_tag 'scaffold', 'depot' %>
+ </head>
+ <body>
+
+ <p style="color: green"><%= flash[:notice] %></p>
+
+ <%= yield %>
+
+ </body>
+ </html>

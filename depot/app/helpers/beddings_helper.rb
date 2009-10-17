@@ -1,0 +1,2 @@
+module BeddingsHelper
+end

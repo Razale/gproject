@@ -1,0 +1,16 @@
+</p>
+<p>
+<h2><%=h @product.title %></h2>
+
+</p>
+<p>
+<%=h @product.size %>
+</p>
+<p>
+<%= image_tag(@product.image_url, :size=>'450x350')%>
+</p>
+<p>
+<%= @product.description %>
+</p>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

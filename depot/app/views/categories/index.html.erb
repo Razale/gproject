@@ -1,0 +1,24 @@
+<h2>Our Products</h2>
+
+<table>
+  
+
+<% @categories.in_groups_of(2).each do |catgroup| %>
+  <tr>
+  	<% catgroup.each do |category| %>
+    
+  	<td><%= image_tag(category.catimage, :size=>'220x200')%><br/><a href="/products/showproducts/<%=h category.catid %>"><%=h category.catname %></a></td>
+    <td><%= link_to 'Show', category %><br/><%= link_to 'Edit', edit_category_path(category) %><br/><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
+  
+     <% end %> 
+  </tr>
+  
+<% end %> 
+</table>
+
+<br/>
+
+<%= link_to 'New category', new_category_path %>
+	
+
+

@@ -1,0 +1,2 @@
+module CoffeeTablesHelper
+end

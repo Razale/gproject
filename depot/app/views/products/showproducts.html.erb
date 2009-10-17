@@ -1,0 +1,22 @@
+
+<h2><%=h @cat.catname %></h2>
+
+<table>
+  
+
+<% @products.in_groups_of(2).each do |productgroup| %>
+  <tr>
+  	<% productgroup.each do |product| %>
+    
+  	<td><%= image_tag (product.image_url, :size=>'240x200')%><br/><a href="/products/<%=h product.id %>"><%=h product.title %></a></td>
+  	  <td><%= link_to 'Show', product %><br/><%= link_to 'Edit', edit_product_path(product) %><br/><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+    <% end %>
+  </tr>
+  
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New product', new_product_path %>

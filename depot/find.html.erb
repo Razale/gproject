@@ -1,0 +1,17 @@
+<h1>Listing client_workouts for <%= params[:search_string] %></h1>
+
+<table>
+  <tr>
+    <th>Trainer</th>
+    <th>Duration mins</th>
+    <th>Date of workout</th>
+    <th>Paid amount</th>
+  </tr>
+
+<% for sofa in @sofas %>
+  <tr>
+    <td><%=h sofa.title %><%= image_tag(sofa.image_url)%></td>
+    
+  </tr>
+<% end %>
+</table>

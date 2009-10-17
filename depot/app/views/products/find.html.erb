@@ -1,0 +1,19 @@
+<div id="product-list">
+<h2>Listing products</h2>
+<table>
+<% for product in @products %>
+<tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+<td>
+<%= image_tag product.image_url, :class => 'list-image' %>
+</td>
+<td class="list-description">
+<dl>
+<dt><%=h product.title %></dt>
+<dd><%=h truncate(product.description.gsub(/<.*?>/,''),
+:length => 80) %></dd>
+</dl>
+</td>
+</tr>
+<% end %>
+</table>
+</div>
