@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+	before_filter :check_logged_in, :only => [:new, :edit, :update]
   # GET /products
   # GET /products.xml
   def index
@@ -7,7 +8,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @products }
-    end
+   end
   end
 
   # GET /products/1
@@ -96,4 +97,11 @@ class ProductsController < ApplicationController
   def find
   	@products = Product.find(:all, :conditions=>["title LIKE ? AND catid = ?","%" + params[:search_string] + "%", params[:category]])
   end
+  
+  private
+  	def check_logged_in
+  		authenticate_or_request_with_http_basic("Ads") do |username, password|
+  			username == "admin" && password == "razale"
+  			end
+  		end
 end
